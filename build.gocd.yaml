@@ -1,0 +1,17 @@
+# simple.gocd.yaml
+pipelines:
+  pipe1:
+    group: simple
+    materials:
+      guild-k8s:
+        git: https://github.com/amasucci/guild-k8s.git
+        destination: guild-k8s
+    stages:
+      - build: # name of stage
+          jobs:
+            build: # name of the job
+              tasks:
+               - exec: # indicates type of task
+                   working_directory: guild-k8s
+                   command: cat
+                   arguments: index.html
