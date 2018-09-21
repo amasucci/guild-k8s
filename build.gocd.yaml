@@ -6,6 +6,9 @@ pipelines:
       guild-k8s:
         git: https://github.com/amasucci/guild-k8s.git
         destination: guild-k8s
+      cook-book:
+        pipeline: atlas-cookbook
+        stage: build
     stages:
       - build: # name of stage
           jobs:
